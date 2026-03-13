@@ -28,35 +28,35 @@ export default function Dashboard() {
   const [hovered, setHovered] = useState<string | null>(null);
 
   return (
-    <div className="bg-[#242e24] w-70 mr-10 ml-10 p-10 font-sans text-gray-200 rounded-xl">
+    <div className="bg-[#242e24] px-4 sm:px-6 md:px-10 md:ml-10 md:mr-10 py-6 sm:py-10 font-sans text-gray-200 rounded-xl">
       {/* Header */}
-      <div className="flex items-center gap-4 mb-7">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6 sm:mb-7">
         <div className="bg-[#2a3a2a] rounded-xl w-11 h-11 flex items-center justify-center text-teal-400 text-xl shrink-0">
           <LayoutDashboard />
         </div>
-        <div>
-          <h1 className="m-0 text-xl font-bold tracking-tight text-gray-100">Your Dashboard</h1>
+        <div className="flex-1">
+          <h1 className="m-0 text-lg sm:text-xl font-bold tracking-tight text-gray-100">Your Dashboard</h1>
           <p className="m-0 text-xs text-gray-500 mt-0.5">Everything at a glance</p>
         </div>
-        <div className="ml-auto flex items-center gap-2 border border-[#3a4a3a] rounded-full px-4 py-1.5 text-xs text-gray-400 font-medium">
+        <div className="hidden sm:flex items-center gap-2 border border-[#3a4a3a] rounded-full px-4 py-1.5 text-xs text-gray-400 font-medium shrink-0">
           <span className="w-2 h-2 rounded-full bg-teal-400 inline-block" />
           Live Preview
         </div>
       </div>
 
       {/* Main Grid */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Left Column */}
         <div className="flex flex-col gap-4">
           {/* Stat Cards */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Active Policies */}
             <div className="bg-[#222822] rounded-2xl p-5 border border-[#2e3a2e]">
               <div className="flex justify-between mb-3">
                 <span className="text-teal-400 text-lg"><ShieldCheck /></span>
                 <span className="text-teal-400 text-base">↗</span>
               </div>
-              <div className="text-3xl font-extrabold text-gray-100 leading-none mb-1">5</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-gray-100 leading-none mb-1">5</div>
               <div className="text-xs text-gray-500 font-medium">Active Policies</div>
             </div>
 
@@ -66,7 +66,7 @@ export default function Dashboard() {
                 <span className="text-yellow-400 text-lg"><ShieldCheck /></span>
                 <span className="text-teal-400 text-base">↗</span>
               </div>
-              <div className="text-3xl font-extrabold text-gray-100 leading-none mb-1">KSh 2.4M</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-gray-100 leading-none mb-1">KSh 2.4M</div>
               <div className="text-xs text-gray-500 font-medium">Total Coverage</div>
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function Dashboard() {
           {/* Quick Actions */}
           <div className="bg-[#222822] rounded-2xl p-5 border border-[#2e3a2e]">
             <h2 className="text-sm font-semibold text-gray-300 mb-4">Quick Actions</h2>
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-3">
               <button
                 className={`flex-1 bg-[#1a2a1a] border rounded-xl py-4 flex flex-col items-center gap-2 cursor-pointer transition-all duration-200 ${hovered === "new" ? "border-teal-400 bg-[#1e2e1e]" : "border-[#2e3a2e]"
                   }`}
@@ -134,15 +134,15 @@ export default function Dashboard() {
               <h2 className="text-sm font-semibold text-gray-300">Policy Distribution</h2>
               <span className="text-gray-600 text-lg cursor-pointer">⊕</span>
             </div>
-            <div className="flex gap-5 items-center">
+            <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center">
               <div
-                className="rounded-xl h-20 w-64 shrink-0"
+                className="rounded-xl h-20 w-full sm:w-48 lg:w-64 shrink-0"
                 style={{
                   background:
                     "linear-gradient(135deg, #4ecdc4 0%, #a8c96e 40%, #c9b84e 70%, #8fba6e 100%)",
                 }}
               />
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 w-full sm:w-auto">
                 {[
                   { label: "Auto", pct: "60%", dot: "bg-teal-400" },
                   { label: "Health", pct: "25%", dot: "bg-yellow-400" },
@@ -187,8 +187,8 @@ export default function Dashboard() {
               <h2 className="text-sm font-semibold text-gray-300">Monthly Spend</h2>
               <span className="text-xs text-gray-500">Last 6 months</span>
             </div>
-            <div className="flex items-baseline gap-2 mb-5">
-              <span className="text-2xl font-extrabold text-gray-100">KSh 8,500</span>
+            <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-5">
+              <span className="text-xl sm:text-2xl font-extrabold text-gray-100">KSh 8,500</span>
               <span className="text-xs text-teal-400 font-medium">↑ 12% vs last month</span>
             </div>
             <SpendChart data={spendData} />

@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 
 import "styles/globals.css";
+import { cn } from "components/lib/utils";
 
 export const metadata: Metadata = {
   title: "AfricaBima",
   description: "AfricaBima",
 };
 
-{/*TODO: Add the better font : Raleway*/ }
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="font-sans">
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
