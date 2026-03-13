@@ -4,10 +4,11 @@ import { ThemeProvider } from "next-themes";
 import "styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Next JS SaaS Starter Template",
-  description: "Next JS SaaS Starter Template",
+  title: "AfricaBima",
+  description: "AfricaBima",
 };
 
+{/*TODO: Add the better font : Raleway*/ }
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -20,8 +21,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="bg-white dark:bg-black min-h-screen">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+      <body className="bg-[#111816] min-h-screen">
+        <ThemeProvider attribute="class" enableSystem>
           {children}
         </ThemeProvider>
       </body>

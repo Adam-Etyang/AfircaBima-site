@@ -8,14 +8,21 @@ import Image from "next/image";
 import Accordion from "components/Accordion";
 import Reviews from "components/Reviews";
 import Download from "components/Download";
+import Dashboard from "components/Dashboard";
+
 
 export default function Page() {
   return (
-    <div className="flex flex-col min-h-screen bg-white dark:bg-black">
+
+    <div className="flex flex-col min-h-screen bg-[#111816]">
       <Header />
+
       <main>
         <Hero />
-        <Features />
+        {/*TODO: Add the dashboard component*/}
+
+        <Dashboard />
+
         <Section
           leftHalf={
             <>
@@ -32,6 +39,7 @@ export default function Page() {
             <Image src={"/products/phone.png"} alt="section-image" width={500} height={100} className="w-1/2 h-auto" />
           }
         />
+
         <Customers />
         <Section
           leftHalf={<Accordion />}
@@ -47,6 +55,7 @@ export default function Page() {
             </div>
           }
         />
+
         <Reviews />
         <Download />
       </main>
