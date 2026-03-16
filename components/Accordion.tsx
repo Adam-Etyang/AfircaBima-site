@@ -14,46 +14,55 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content, isOpen, t
   return (
     <div className="mb-4">
       <div
-        className={`w-full rounded-lg overflow-hidden ${
-          isOpen ? "bg-black dark:bg-gray-900" : "bg-black dark:bg-gray-900"
-        }`}
+        className={`w-full rounded-lg overflow-hidden ${isOpen ? "bg-[#d3ded3] dark:bg-[#222822]" : "bg-[#d3ded3] dark:bg-[#222822]"
+          }`}
       >
         <button className="w-full text-left p-4 flex justify-between items-center" onClick={toggleOpen}>
-          <span className="text-xl font-semibold text-white dark:text-white">{title}</span>
+          <span className="text-xl font-semibold text-black dark:text-white">{title}</span>
           <span className={`transform transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>
-            <FaChevronDown className="text-2xl text-white" />
+            <FaChevronDown className="text-2xl text-black dark:text-white " />
           </span>
         </button>
         <div
-          className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${
-            isOpen ? "max-h-[1000px]" : "max-h-0"
-          }`}
+          className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${isOpen ? "max-h-[1000px]" : "max-h-0"
+            }`}
         >
           <div className="p-4">
-            <p className="text-white font-light">{content}</p>
+            <p className="text-black dark:text-white font-light">{content}</p>
           </div>
         </div>
       </div>
     </div>
   );
 };
-
 const defaultAccordionItems = [
   {
-    title: "Sign up for free",
-    content: "Start your journey with a 34-day trial. It's easy no credit card or commitment.",
+    title: "Compare Insurance Options",
+    content:
+      "Explore different insurance products in one place and compare coverage options for motor, health, life, and business insurance.",
   },
   {
-    title: "Easy to use",
+    title: "Apply Digitally",
     content:
-      "Our app is designed to be user-friendly and easy to use. We want to provide a seamless experience for your users so that you can focus on what matters.",
+      "Submit insurance applications online and upload required documents securely without paperwork or long in-person processes.",
   },
   {
-    title: "Focus on what matters",
+    title: "Track Policies and Claims",
     content:
-      "With better financial management, you can reduce money-related stress and focus on what matters most. More to come.",
+      "Monitor your policy status, receive updates, and follow claim progress directly from your dashboard.",
+  },
+  {
+    title: "Mobile App Access",
+    content:
+      "Manage your policies, receive notifications, and stay updated anywhere using the AfricaBima mobile app.",
+  },
+  {
+    title: "Tools for Insurance Agents",
+    content:
+      "Agents can manage customer applications, review policy details, and track commissions through the platform.",
   },
 ];
+
 
 interface AccordionProps {
   items?: { title: string; content: string }[];

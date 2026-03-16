@@ -1,62 +1,175 @@
+"use client";
 import React from "react";
-import FeatureCard from "./FeatureCard";
-import { FaReact, FaDatabase, FaShieldAlt } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss, SiStripe } from "react-icons/si";
+import { useState } from "react";
 
 const Features = () => {
+  const [hovered, setHovered] = useState<number | null>(null);
+
   const features = [
     {
-      icon: SiNextdotjs,
-      title: "Next.js 14",
-      description: "App dir, Routing, Layouts, components, and more.",
+      title: "Compare Insurance Options",
+      content: "Explore different insurance products in one place and compare coverage options for motor, health, life, and business insurance.",
     },
     {
-      icon: FaReact,
-      title: "React 18",
-      description: "Server and Client Components. using hooks and context.",
+      title: "Apply Digitally",
+      content: "Submit insurance applications online and upload required documents securely without paperwork or long in-person processes.",
     },
     {
-      icon: FaDatabase,
-      title: "Database",
-      description: "Postgres basic database and other cool features to come.",
+      title: "Track Policies and Claims",
+      content: "Monitor your policy status, receive updates, and follow claim progress directly from your dashboard.",
     },
     {
-      icon: SiTailwindcss,
-      title: "Components",
-      description: "Awesome components built with Tailwind CSS and more to come.",
+      title: "Mobile App Access",
+      content: "Manage your policies, receive notifications, and stay updated anywhere using the AfricaBima mobile app.",
     },
     {
-      icon: FaShieldAlt,
-      title: "Authentication",
-      description: "Talk about your authentication features built into your app.",
+      title: "Tools for Insurance Agents",
+      content: "Agents can manage customer applications, review policy details, and track commissions through the platform.",
     },
-    {
-      icon: SiStripe,
-      title: "Subscriptions",
-      description: "Talk about your subscription features and how they work.",
-    },
+
   ];
 
   return (
-    <section className="container mx-auto px-4 py-12 bg-gray-50 dark:bg-gray-900 transition-colors duration-200 rounded-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900 dark:text-white mb-4">Features</h2>
-          <p className="mt-8 text-xl text-gray-600 dark:text-gray-300 font-light">
-            Highlight cool features of your app using the beautifully designed custom cards with icons. You can use any
-            icon you want.
-          </p>
-        </div>
-        <div className="mt-10">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, index) => (
-              <FeatureCard key={index} {...feature} />
-            ))}
-          </div>
+    <>
+
+      <div
+        className="fs-title w-full min-h-screen flex flex-col justify-center px-10 md:px-20 py-20"
+        style={{ background: "transparent" }}
+      >
+        <p
+          className="text-6xl tracking-[0.18em] uppercase mb-12 text-black"
+        >
+          Features
+        </p>
+
+        <div className="flex flex-col">
+          {features.map((feature, i) => {
+            const isHovered = hovered === i;
+            const anyHovered = hovered !== null;
+            const isBlurred = anyHovered && !isHovered;
+
+            return (
+              <div
+                key={i}
+                onMouseEnter={() => setHovered(i)}
+                onMouseLeave={() => setHovered(null)}
+                style={{
+                  opacity: isBlurred ? 0.35 : 1,
+                  filter: isBlurred ? "blur(2px)" : "none",
+                  willChange: "opacity",
+                  transition: "filter 0.4s ease, opacity 0.4s ease",
+                }}
+              >
+                {/* Top rule */}
+                <div
+                  style={{
+                    height: "1px",
+                    background: isHovered
+                      ? "rgba(0,0,0,0.5)"
+                      : "rgba(0,0,0,0.15)",
+                  }}
+                />
+
+                {/* Row */}
+                <div className="flex flex-col py-3 gap-4 cursor-default">
+                  <div className="flex items-baseline justify-between gap-5">
+
+                    {/* Index */}
+                    <span
+                      className="fs-body shrink-0 text-xs tabular-nums w-6"
+                      style={{
+                        color: isHovered ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0.2)",
+                      }}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+
+                    {/* Headline */}
+                    <h2
+                      className="fs-headline flex-1"
+                      style={{
+                        fontSize: "clamp(20px, 3.5vw, 80px)",
+                        lineHeight: 1.0,
+                        letterSpacing: "-0.03em",
+                        color: isHovered ? "#1a1204" : "rgba(0,0,0,0.75)",
+                        transition: "color 0.35s ease",
+                        fontStyle: i % 2 === 1 ? "italic" : "normal",
+                      }}
+                    >
+                      {feature.title}
+                    </h2>
+
+                    {/* Arrow — appears on hover */}
+                    <div
+                      style={{
+                        opacity: isHovered ? 1 : 0,
+                        transform: isHovered ? "translateY(0)" : "translateY(-8px)",
+                        transition: "opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s",
+                        flexShrink: 0,
+                      }}
+                    >
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        style={{ color: "#1a1204" }}
+                      >
+                        <path
+                          d="M4 10h12M11 5l5 5-5 5"
+                          stroke="currentColor"
+                          strokeWidth="1.4"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div
+                    style={{
+                      maxHeight: isHovered ? "200px" : "0px",
+                      opacity: isHovered ? 1 : 0,
+                      overflow: "hidden",
+                      transition:
+                        "max-height 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.35s ease 0.05s",
+                      paddingLeft: "32px",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: "20px",
+                        lineHeight: 1.6,
+                        color: "rgba(0,0,0,0.55)",
+                        fontWeight: 300,
+                        whiteSpace: "normal",
+                        maxWidth: "600px",
+                      }}
+                    >
+                      {feature.content}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bottom rule on last item */}
+                {i === features.length - 1 && (
+                  <div
+                    style={{
+                      height: "1px",
+                      background: isHovered
+                        ? "rgba(0,0,0,0.5)"
+                        : "rgba(0,0,0,0.15)",
+                    }}
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
-    </section>
+    </>
   );
+
 };
 
 export default Features;

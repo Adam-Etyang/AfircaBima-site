@@ -18,7 +18,7 @@ const ThemeSwitch = () => {
   return (
     <button
       onClick={() => setTheme(theme === "dark" || resolvedTheme === "dark" ? "light" : "dark")}
-      className="p-2 text-gray-800 dark:text-gray-200 bg-transparent dark:bg-black"
+      className="p-2.5 rounded-lg bg-light-bg dark:bg-dark-card text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-[#2a3a2a] transition-colors"
       aria-label="Toggle Dark Mode"
     >
       {theme === "dark" || resolvedTheme === "dark" ? <AiOutlineSun size={20} /> : <AiOutlineMoon size={20} />}

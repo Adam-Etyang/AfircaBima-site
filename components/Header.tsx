@@ -2,7 +2,7 @@ import NavBar from "./NavBar";
 
 export default function Header() {
   return (
-    <header className="bg-[#1a1e1a] dark:border-b dark:border-gray-800">
+    <header className="bg-transparent border-b border-gray-300 dark:border-gray-800 transition-colors">
       <NavBar />
     </header>
   );

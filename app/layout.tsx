@@ -3,6 +3,7 @@ import { ThemeProvider } from "next-themes";
 
 import "styles/globals.css";
 import { cn } from "components/lib/utils";
+import { ScrollGradient } from "components/ScrollGradient";
 
 export const metadata: Metadata = {
   title: "AfricaBima",
@@ -21,8 +22,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#111816] min-h-screen">
-        <ThemeProvider attribute="class" enableSystem>
+      <body className="min-h-screen transition-colors relative">
+        <ScrollGradient />
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem storageKey="theme">
           {children}
         </ThemeProvider>
       </body>

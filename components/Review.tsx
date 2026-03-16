@@ -16,7 +16,7 @@ const Review: React.FC<ReviewProps> = ({
   designation = "Customer",
 }) => {
   return (
-    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+    <div className="bg-[#d3ded3] dark:bg-[#222822] p-6 rounded-lg shadow-md">
       <div className="flex items-center mb-2">
         {[...Array(5)].map((_, i) => (
           <FaStar key={i} className={`w-5 h-5 ${i < rating ? "text-green-500" : "text-gray-300"}`} />

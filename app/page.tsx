@@ -9,55 +9,60 @@ import Accordion from "components/Accordion";
 import Reviews from "components/Reviews";
 import Download from "components/Download";
 import Dashboard from "components/Dashboard";
+import CTACards from "components/CTACards";
 
 
 export default function Page() {
   return (
 
-    <div className="flex flex-col min-h-screen bg-[#111816]">
+    <div className="flex flex-col min-h-screen bg-transparent relative z-10">
       <Header />
 
       <main>
-        <Hero />
-        {/*TODO: Add the dashboard component*/}
+        <Section
+
+          leftHalf={
+            <Hero />
+
+          }
+          rightHalf={
+            <div className="relative w-full h-full flex flex-col justify-center">
+              {/* Laptop Image - Behind */}
+              <Image
+                src="/laptop_realistic-Photoroom.png"
+                alt="laptop"
+                width={800}
+                height={550}
+                className="w-[150%] h-auto absolute left-0 scale-150"
+              />
+
+              {/* Phone Image - In Front */}
+              <Image
+                src="/phone_035-Photoroom.png"
+                alt="phone"
+                width={320}
+                height={580}
+                className="w-3/4 md:w-2/3 h-auto relative z-10 md:-translate-x-16 scale-110 md:scale-125"
+              />
+            </div>
+
+          }
+        />
+
+        <CTACards />
+
+        <Customers />
+
+        <Download />
+
 
         <Dashboard />
 
-        <Section
-          leftHalf={
-            <>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900 dark:text-white mb-4">
-                Effortlessly highlight the key features of your app
-              </h2>
-              <p className="text-xl font-light">
-                Our app makes it easy to showcase your key features. With customizable sections, you can highlight the
-                most important aspects of your product. More to come.
-              </p>
-            </>
-          }
-          rightHalf={
-            <Image src={"/products/phone.png"} alt="section-image" width={500} height={100} className="w-1/2 h-auto" />
-          }
-        />
 
-        <Customers />
-        <Section
-          leftHalf={<Accordion />}
-          rightHalf={
-            <div className="flex flex-col justify-end">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900 dark:text-white mb-4">
-                Highlight the key features
-              </h2>
-              <p className="text-xl font-light">
-                Talk about some of the key features of your app that you want to highlight. Use the beautiful accordion
-                to highlight the key features of your app.
-              </p>
-            </div>
-          }
-        />
+        <Features />
 
         <Reviews />
-        <Download />
+
       </main>
       <Footer />
     </div>

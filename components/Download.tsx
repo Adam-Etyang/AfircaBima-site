@@ -7,11 +7,11 @@ const Download: React.FC = () => (
     <div className="flex flex-col md:flex-row items-center gap-8">
       <div className="w-full md:w-1/2 order-1 p-4 flex justify-center md:justify-start items-center">
         <Image
-          src="/products/phone1.png"
+          src="/phone_035-Photoroom.png"
           alt="Financial app interface"
           width={500}
           height={500}
-          className="w-1/2 h-auto mx-auto md:mx-0"
+          className="w-3/4 h-auto mx-auto md:mx-0"
         />
       </div>
       <div className="w-full md:w-1/2 order-2 flex justify-center md:justify-end">

@@ -1,4 +1,8 @@
+"use client";
+
 import React from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import {
   AiOutlineDiscord,
   AiTwotoneBug,
@@ -9,7 +13,9 @@ import {
   AiOutlineCiCircle,
 } from "react-icons/ai";
 
-const icons = [
+//TODO: Add logos of actual insurance companies Supported
+const logos = [
+
   { Icon: AiTwotoneBug },
   { Icon: AiOutlineDiscord },
   { Icon: AiTwotoneExperiment },
@@ -20,18 +26,35 @@ const icons = [
 ];
 
 const Customers: React.FC = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      align: "center",
+      skipSnaps: false,
+    },
+    [Autoplay({ delay: 3000, stopOnInteraction: false })]
+  );
+
   return (
-    <div className="w-full py-12 bg-black dark:bg-white">
+    <div className="w-full py-12 bg-transparent border-t border-b dark:border-gray-800 border-gray-200">
       <div className="w-full px-4 md:px-8 lg:px-16">
-        <div className="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row w-full">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-0 text-white dark:text-black text-center md:text-left md:w-1/3">
-              Over 50,000 people rely on our app for their daily needs
-            </h2>
-            <div className="flex flex-wrap justify-center md:justify-end gap-6 md:w-2/3">
-              {icons.map(({ Icon }, index) => (
-                <div key={index} className="flex flex-col items-center justify-center">
-                  <Icon className="text-3xl md:text-4xl text-white dark:text-black" />
+        <div className="flex flex-col items-center justify-center max-w-7xl mx-auto">
+
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-8 text-black dark:text-white text-center">
+
+            Supported by multiple and reliable insurance providers
+
+          </h2>
+
+          {/* Carousel */}
+          <div className="w-full overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-6">
+              {logos.map(({ Icon }, index) => (
+                <div
+                  key={index}
+                  className="flex-[0_0_25%] sm:flex-[0_0_20%] md:flex-[0_0_15%] flex items-center justify-center"
+                >
+                  <Icon className="text-4xl sm:text-5xl md:text-6xl text-white dark:text-black opacity-80 hover:opacity-100 transition-opacity" />
                 </div>
               ))}
             </div>
