@@ -27,7 +27,6 @@ export default function Page() {
           }
           rightHalf={
             <div className="relative w-full h-full flex flex-col justify-center">
-              {/* Laptop Image - Behind */}
               <Image
                 src="/laptop_realistic-Photoroom.png"
                 alt="laptop"
@@ -35,10 +34,17 @@ export default function Page() {
                 height={550}
                 className="w-[150%] h-auto absolute left-0 scale-150"
               />
+              <Image
+                src="/Dashboardimg.png"
+                width={600}
+                height={380}
+                alt="dashboard"
+                className="absolute top-[0%] left-[0] h-[93.9%] w-[100%]"
+              />
 
               {/* Phone Image - In Front */}
               <Image
-                src="/phone_035-Photoroom.png"
+                src="/image.png"
                 alt="phone"
                 width={320}
                 height={580}
@@ -55,8 +61,9 @@ export default function Page() {
 
         <Download />
 
-
+        {/*
         <Dashboard />
+        */}
 
 
         <Features />

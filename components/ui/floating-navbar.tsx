@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import {
   motion,
   AnimatePresence,
@@ -113,14 +114,14 @@ export const FloatingNav = ({
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-[#d3ded3] dark:bg-[#1a1f1a] border-1 border-[#2d4536] mt-3 animate-in fade-in slide-in-from-top-2 duration-200">
               <DropdownMenuItem asChild className="focus:bg-teal-800 dark:focus:bg-teal-900/30 transition-colors">
-                <a href="/login/customer" className="cursor-pointer">
+                <Link href="https://portal.africabima.com" className="cursor-pointer">
                   Login as Customer
-                </a>
+                </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild className="focus:bg-teal-800 dark:focus:bg-teal-900/30 transition-colors border-0">
-                <a href="/login/agent" className="cursor-pointer">
+                <Link href="https://portal.africabima.com" className="cursor-pointer">
                   Login as Agent
-                </a>
+                </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

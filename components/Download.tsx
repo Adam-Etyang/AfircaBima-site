@@ -7,7 +7,7 @@ const Download: React.FC = () => (
     <div className="flex flex-col md:flex-row items-center gap-8">
       <div className="w-full md:w-1/2 order-1 p-4 flex justify-center md:justify-start items-center">
         <Image
-          src="/phone_035-Photoroom.png"
+          src="/image.png"
           alt="Financial app interface"
           width={500}
           height={500}
@@ -20,18 +20,18 @@ const Download: React.FC = () => (
             Download our app
           </h2>
           <p className="text-xl text-gray-800 dark:text-gray-300 mb-6 font-light">
-            Download the state of the art app and start saving time and money. More to come.
+            Download our app to manage your policies on the fly.
           </p>
           <div className="flex space-x-4">
             <Link
-              href="#"
+              href="https://apps.apple.com/us/iphone/today"
               className="download-button bg-black dark:bg-white text-white dark:text-black px-5 py-2 rounded-md text-base flex items-center space-x-2 transition-colors duration-200"
             >
               <FaApple className="text-2xl" />
               <span>App Store</span>
             </Link>
             <Link
-              href="#"
+              href="https://play.google.com/store/apps/details?id=com.africabima.app&hl=en"
               className="download-button bg-black dark:bg-white text-white dark:text-black px-5 py-2 rounded-md text-base flex items-center space-x-2 transition-colors duration-200"
             >
               <FaGooglePlay className="text-2xl" />

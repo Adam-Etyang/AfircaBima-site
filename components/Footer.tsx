@@ -50,7 +50,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-transparent text-gray-600 dark:text-gray-300 font-sans transition-colors">
+    <footer className="bg-transparent text-black font-sans transition-colors">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-8 py-16 grid grid-cols-3 gap-12">
 
@@ -60,7 +60,7 @@ export default function Footer() {
             <div className="w-1 h-10 bg-green-500 rounded-full mr-3" />
             <span className="text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight">Africabima</span>
           </div>
-          <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+          <p className="text-sm text-black dark:text-gray-400 leading-relaxed">
             We enable underwriters, banks, insurance brokers and agents to launch and scale digital
             insurance products without having to worry about IT and insurance systems.
           </p>
@@ -68,14 +68,14 @@ export default function Footer() {
 
         {/* Useful Links */}
         <div>
-          <h3 className="text-xs font-bold tracking-widest text-gray-900 dark:text-white uppercase mb-1">Useful Links</h3>
+          <h3 className="text-xs font-bold tracking-widest tet-gray-900 dark:text-white uppercase mb-1">Useful Links</h3>
           <div className="w-full h-px bg-gray-300 dark:bg-dark-card mb-4" />
           <ul className="flex flex-col">
             {usefulLinks.map((link) => (
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="flex items-center gap-2 py-3 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-150 border-b border-gray-200 dark:border-gray-700 group"
+                  className="flex items-center gap-2 py-3 text-sm text-black dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-150 border-b border-gray-200 dark:border-gray-700 group"
                 >
                   {link.chevron && (
                     <svg
@@ -143,7 +143,7 @@ export default function Footer() {
               <span className="text-blue-500">Pen</span>
               <span className="text-blue-400">soft</span>
             </span>
-            <span className="text-xs text-gray-500 dark:text-gray-400 italic ml-0.5">The Knowledge Enterprise</span>
+            <span className="text-xs text-black italic ml-0.5">The Knowledge Enterprise</span>
           </div>
           <Copyright />
           <span className="font-semibold text-gray-600 dark:text-gray-300">A product of Pensoft Systems Ltd.</span>

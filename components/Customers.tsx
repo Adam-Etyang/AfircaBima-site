@@ -1,28 +1,19 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import {
-  AiOutlineDiscord,
-  AiTwotoneBug,
-  AiTwotoneExperiment,
-  AiOutlineTaobao,
-  AiOutlineSpotify,
-  AiOutlineCode,
-  AiOutlineCiCircle,
-} from "react-icons/ai";
 
-//TODO: Add logos of actual insurance companies Supported
 const logos = [
-
-  { Icon: AiTwotoneBug },
-  { Icon: AiOutlineDiscord },
-  { Icon: AiTwotoneExperiment },
-  { Icon: AiOutlineTaobao },
-  { Icon: AiOutlineSpotify },
-  { Icon: AiOutlineCode },
-  { Icon: AiOutlineCiCircle },
+  { src: "/Madison_logo.png", alt: "Madison Insurance" },
+  { src: "/Jubilee_logo.png", alt: "Jubilee Insurance" },
+  { src: "/CIC_logo.png", alt: "CIC Insurance" },
+  { src: "/oldmutual_logo.png", alt: "Old Mutual" },
+  { src: "/Britam_logo.png", alt: "Britam Insurance" },
+  { src: "/Alianz logo.png", alt: "Allianz Insurance" },
+  { src: "/AAR_logo.png", alt: "AAR Insurance" },
+  { src: "/APA_logo.png", alt: "APA Insurance" },
 ];
 
 const Customers: React.FC = () => {
@@ -49,12 +40,18 @@ const Customers: React.FC = () => {
           {/* Carousel */}
           <div className="w-full overflow-hidden" ref={emblaRef}>
             <div className="flex gap-6">
-              {logos.map(({ Icon }, index) => (
+              {logos.map(({ src, alt }, index) => (
                 <div
                   key={index}
                   className="flex-[0_0_25%] sm:flex-[0_0_20%] md:flex-[0_0_15%] flex items-center justify-center"
                 >
-                  <Icon className="text-4xl sm:text-5xl md:text-6xl text-white dark:text-black opacity-80 hover:opacity-100 transition-opacity" />
+                  <Image
+                    src={src}
+                    alt={alt}
+                    width={120}
+                    height={80}
+                    className="h-auto w-24 sm:w-28 md:w-32 object-contain opacity-80 hover:opacity-100 transition-opacity"
+                  />
                 </div>
               ))}
             </div>

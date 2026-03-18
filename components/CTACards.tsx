@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
@@ -230,7 +231,7 @@ export default function HoverCards() {
     <div className="bg-[#d3ded3] dark:bg-[#222822] px-2 sm:px-6 md:px-10 py-6 sm:py-10 font-sans text-gray-800 dark:text-gray-200 rounded-xl transition-colors max-w-6xl mx-auto my-10">
       <div className="mb-8">
         <div className="inline-block text-black rounded-full border-2 border-[#111816] px-6 py-2 text-sm font-semibold">
-          Open an Account
+          <Link href="https://portal.africabima.com/">Open an Account</Link>
         </div>
       </div>
       <div className="flex items-stretch gap-4 p-8 min-h-[700px] max-w-6xl mx-auto font-['Sora',sans-serif]">
@@ -276,6 +277,7 @@ export default function HoverCards() {
 
           {/* CTA */}
           <button
+            type="button"
             className="mt-3.5 self-start px-5 py-2.5 rounded-full text-[13px] font-medium bg-white dark:bg-[#111816] dark:text-white text-[#1a1a2e] overflow-hidden"
             style={{
               maxHeight: hovered === "a" ? "60px" : "0px",
@@ -284,7 +286,7 @@ export default function HoverCards() {
               transition: "max-height 0.3s ease, opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s",
             }}
           >
-            <p>Join as an agent →</p>
+            <Link href="https://portal.africabima.com/">Join as an agent →</Link>
           </button>
         </div>
 
@@ -327,8 +329,8 @@ export default function HoverCards() {
             Explore insurance options, apply online, upload documents, and track your policy or claim progress directly from the platform or mobile app.
           </div>
 
-          {/* CTA */}
           <button
+            type="button"
             className="mt-3.5 self-start px-5 py-2.5 rounded-full text-[13px] font-medium bg-[#1a1204] text-[#f0ede8] overflow-hidden"
             style={{
               maxHeight: hovered === "b" ? "60px" : "0px",
@@ -337,7 +339,7 @@ export default function HoverCards() {
               transition: "max-height 0.3s ease, opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s",
             }}
           >
-            Get started →
+            <Link href="https://portal.africabima.com/"> Get started → </Link>
           </button>
         </div>
       </div>

@@ -8,7 +8,7 @@ const Features = () => {
   const features = [
     {
       title: "Compare Insurance Options",
-      content: "Explore different insurance products in one place and compare coverage options for motor, health, life, and business insurance.",
+      content: "Explore different insurance products in one place and compare coverage options for motor, Medical, travel, Personal Accident, Personal, Domestic, and business insurance.",
     },
     {
       title: "Apply Digitally",
